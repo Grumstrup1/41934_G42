@@ -11,4 +11,4 @@ We are examining the claim that the project requires **330 windows** and that th
 - Page: 64  
 
 ## Script Description  
-The script (`A1.ipynb`) analyzes the cost estimation of windows by checking whether the reported number of windows is correct and by assessing the plausibility of the stated cost. It does this by exctracting the relevant data from the IFC file, comparing them to the stated figures, and utilizing average window prices from molio database to assess whether the total cost is realistic.
+The script (`A1.ipynb`) analyzes the cost estimation of windows by checking whether the reported number of windows is correct and by assessing the plausibility of the stated cost. It does this by exctracting the relevant data from the IFC file, comparing them to the stated figures, and utilizing average window prices from molio database to assess whether the total cost is realistic. 
