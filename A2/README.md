@@ -2,10 +2,10 @@
 
 ## A2a: Coding Confidence
 
-**I am confident coding in Python:**
+**We as a group are confident coding in Python:**
 **Score: 3 – Agree**
 
-Our group feels comfortable coding in Python, especially when using libraries such as `ifcopenshell` to parse IFC files and apply logic to check building-related claims. There is still room to improve efficiency, optimization, and extending functionality to other building elements, but we are confident in building functional tools.
+Our group has experience with coding in python from work and other DTU courses and we are confident in building tools for IFC model checking.
 
 ---
 
@@ -17,10 +17,10 @@ Our group feels comfortable coding in Python, especially when using libraries su
 The claimed *cost estimation* of constructing the building.
 
 **Description of the claim:**
-The report for Building #2516 provides a cost estimate for various building elements (e.g., windows). We want to verify whether the claimed numbers of elements and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported costs are legitimate and consistent with the model geometry.
+The report for building #2516 provides a cost estimate for various building elements (e.g., windows) including quantities for each building element. We want to verify whether the claimed quantities of each elements and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported building cost is legitimate and consistent with the projected BIM model.
 
 **Justification for selection:**
-Cost estimation is a central part of building design and construction. Incorrect or inflated cost claims can significantly impact budgets and decision-making. By focusing on windows first (and later extending to doors, walls, and other elements), we can create a tool that checks the validity of reported numbers against the model. This directly supports transparency and reliability in construction projects.
+Cost estimation is a central part of building design and construction. Wrong quantities and building element detection can result in incorrect cost estimation and therefore inflated/deflated cost estimations which can significantly impact budgets and decision-making. By creating a tool that can not only validate the claimed cost estimation but also creates it own cost estimation based on quantities from the IFC models more correct cost estimations can be made resulting in better decision-making and budgetting.
 
 ---
 
