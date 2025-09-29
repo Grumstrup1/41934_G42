@@ -104,5 +104,6 @@ We are developing a Python-based tool using `ifcopenshell` that automatically va
 
 **Do you know how to get it in ifcOpenShell?**
 
-* Yes. Using `model.by_type("IfcWindow")` we can iterate through wi
+* Yes. Using `model.by_type("IfcWindow")` we can iterate through windows and access OverallHeight and OverallWidth.
+Materials can be accessed via HasAssociations.
 
