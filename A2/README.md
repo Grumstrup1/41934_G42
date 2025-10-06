@@ -3,9 +3,9 @@
 ## A2a: Coding Confidence
 
 **We as a group are confident coding in Python:**
-**Score: 3 – Agree**
+**Total score: 7-8**
 
-Our group has experience with coding in python from work and other DTU courses and we are confident in building tools for IFC model checking.
+We are analysts within the focus area "Build", with a specific focus on cost estimation.
 
 ---
 
@@ -14,10 +14,10 @@ Our group has experience with coding in python from work and other DTU courses a
 **Selected building:** #2516
 
 **Claim / issue to check:**
-The claimed *cost estimation* of constructing the building.
+How realistic the claimed *cost estimation* of constructing the building is.
 
 **Description of the claim:**
-The report for building #2516 provides a cost estimate for various building elements (e.g., windows) including quantities for each building element. We want to verify whether the claimed quantities of each elements and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported building cost is legitimate and consistent with the projected BIM model.
+The report for building #2516 provides a cost estimate for various building elements (e.g., windows) including quantities for each building element. We want to verify whether the claimed quantities of each elements and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported building cost is realistic and consistent with the projected BIM model.
 
 **Justification for selection:**
 Cost estimation is a central part of building design and construction. Wrong quantities and building element detection can result in incorrect cost estimation and therefore inflated/deflated cost estimations which can significantly impact budgets and decision-making. By creating a tool that can not only validate the claimed cost estimation but also creates it own cost estimation based on quantities from the IFC models more correct cost estimations can be made resulting in better decision-making and budgetting.
@@ -27,16 +27,12 @@ Cost estimation is a central part of building design and construction. Wrong qua
 ## A2c: Use Case
 
 **How would you check this claim?**
-
-* By reading the IFC model with `ifcopenshell` and automatically counting relevant elements (e.g., windows).
-* By calculating areas and volumes where needed.
-* By comparing extracted values against the reported claims.
-* By estimating costs using a price database (e.g., cost per m²) and highlighting mismatches.
+By analyzing the IFC model with `ifcopenshell`, automatically extracting relevant elements (e.g., windows), and then calculating costs, the extracted values and produced cost estimates can be compared to the claimed quantities and cost estimations.
 
 **When would this claim need to be checked?**
 
-* During the **design phase**, when cost reports are prepared.
-* It can also be valuable in the **planning phase**, before tendering, to ensure claimed numbers are realistic.
+This claim should be checked during the **design phase**, when cost reports are prepared. It can also be valuable in the **planning phase**, before tendering, to ensure that the claimed numbers are realistic.
+
 
 **What information does this claim rely on?**
 
@@ -47,17 +43,15 @@ Cost estimation is a central part of building design and construction. Wrong qua
 
 **What phase?**
 
-* **Design and planning phase.**
+**Design and planning phase.**
 
 **What BIM purpose is required?**
 
-* **Analyse**: To check validity of claims.
-* **Communicate**: To report mismatches between model and cost report.
+The purpose is to **analyze** the model to check the validity of claims and to **communicate** any mismatches identified between the model and the cost report.
 
-**Closest BIM use case:**
+**BIM use case:**
 
-* "Cost Estimation" (5D BIM).
-* If no exact match exists, this is a new use case: **Automated Validation of Cost Reports from IFC models.**
+XX Use case?
 
 ---
 
@@ -70,13 +64,13 @@ Cost estimation is a central part of building design and construction. Wrong qua
 ## A2e: Tool Idea
 
 **Description:**
-We are developing a Python-based tool using `ifcopenshell` that automatically validates cost estimation claims from BIM models. The tool reviews the IFC model, extracts relevant elements (starting with windows), calculates their areas and counts, assigns estimated prices, and compares these against claimed costs in reports. It then highlights mismatches in quantities, dimensions, or total costs.
+Our idea is to develop a tool that automatically validates cost estimation claims from BIM models. The tool reviews the IFC model, extracts relevant elements, calculates quantities, assigns estimated prices based on molio price data, and compares these against claimed costs in reports. It highlights mismatches in quantities, dimensions, or total costs. Compared to current manual methods, which rely heavily on qualified estimators and are both time-consuming and prone to human error, this tool provides a fast, consistent, and transparent way to verify cost reports directly against the model data.
 
 **Business and societal value:**
 
 * **Transparency:** Ensures that reported costs match actual model data, preventing overestimation.
 * **Efficiency:** Automates a process that is otherwise manual and error-prone.
-* **Trustworthiness:** Helps stakeholders (clients, contractors, auditors) verify that project costs are grounded in real data.
+* **Trustworthiness:** Helps stakeholders verify that project costs are grounded in real data and quantities.
 * **Educational value:** Demonstrates the potential of OpenBIM tools in cost validation for students and professionals.
 
 ---
@@ -84,6 +78,8 @@ We are developing a Python-based tool using `ifcopenshell` that automatically va
 ## A2f: Information Requirements
 
 **Information needed from IFC:**
+
+We need to extract all relevant IfcBuildingElements along with geometry
 
 * **IfcWindow** (and later IfcDoor, IfcWall, etc.)
 
