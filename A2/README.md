@@ -5,7 +5,7 @@
 **We as a group are confident coding in Python:**
 **Total score: 7-8**
 
-We are analysts within the focus area "Build", with a specific focus on cost estimation.
+We are analysts within the focus area "Build", with a specific focus on cost estimation of the facade of the building.
 
 ---
 
@@ -17,7 +17,7 @@ We are analysts within the focus area "Build", with a specific focus on cost est
 How realistic the claimed *cost estimation* of constructing the building is.
 
 **Description of the claim:**
-The report for building #2516 provides a cost estimate for various building elements (e.g., windows) including quantities for each building element. We want to verify whether the claimed quantities of each elements and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported building cost is realistic and consistent with the projected BIM model.
+The report for building #2508 provides a cost estimate for various building elements (e.g., windows) including quantities for each building element. We want to verify whether the claimed quantities of each element in the facade and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported building cost is realistic and consistent with the projected BIM model.
 
 **Justification for selection:**
 Cost estimation is a central part of building design and construction. Wrong quantities and building element detection can result in incorrect cost estimation and therefore inflated/deflated cost estimations which can significantly impact budgets and decision-making. By creating a tool that can not only validate the claimed cost estimation but also creates it own cost estimation based on quantities from the IFC models more correct cost estimations can be made resulting in better decision-making and budgetting.
@@ -47,11 +47,11 @@ This claim should be checked during the **design phase**, when cost reports are 
 
 **What BIM purpose is required?**
 
-The purpose is to **analyze** the model to check the validity of claims and to **communicate** any mismatches identified between the model and the cost report.
+The purpose is gather,  more specifically quantify and montior the model to check the validity of claims and to analyse by forecasting the cost estimation.
 
 **BIM use case:**
 
-XX Use case?
+The bim use case is case 02 from the course website, 02: Cost Estimation
 
 ---
 
@@ -79,7 +79,7 @@ Our idea is to develop a tool that automatically validates cost estimation claim
 
 **Information needed from IFC:**
 
-We need to extract all relevant IfcBuildingElements along with geometry
+We need to extract all relevant IfcBuildingElements along with geometry, so for example for a window:
 
 * **IfcWindow** (and later IfcDoor, IfcWall, etc.)
 
@@ -96,10 +96,15 @@ We need to extract all relevant IfcBuildingElements along with geometry
 
 **Is it in the model?**
 
-* Yes, these attributes are standard in IFC windows and are present in our Building #2516 model.
+* Yes, these attributes are standard in IFC windows and are present in our Building #2508 model.
 
 **Do you know how to get it in ifcOpenShell?**
 
 * Yes. Using `model.by_type("IfcWindow")` we can iterate through windows and access OverallHeight and OverallWidth.
 Materials can be accessed via HasAssociations.
+
+## A2g: Identify appropriate software licence
+
+* To make the tool as usable as possible the tool will be build on open source software, mainly relying on python and blender which offers free licenses for all.
+
 
