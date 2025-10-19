@@ -57,7 +57,7 @@ The bim use case is case 02 from the course website, 02: Cost Estimation
 
 ## A2d: Scope the Use Case
 
-![A2c Use Case Diagram](IMG/A2c_UseCase.svg)
+![A2c Use Case Diagram](IMG/a2c - use case.svg)
 
 ---
 
