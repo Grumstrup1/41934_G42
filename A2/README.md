@@ -57,7 +57,7 @@ The bim use case is case 02 from the course website, 02: Cost Estimation
 
 ## A2d: Scope the Use Case
 
-![A2c Use Case Diagram](A2/a2c - use case.svg)
+![A2c Use Case Diagram](A2/a2c_use_case.svg)
 
 ---
 
@@ -89,7 +89,7 @@ We need to extract all relevant IfcBuildingElements along with geometry, so for 
 * Element counts
 * Element geometry (to calculate areas, m²)
 
-![A2e Tool Idea Diagram](A2/a2c - tool idea.svg)
+![A2e Tool Idea Diagram](A2/a2e_tool_idea.svg)
 
 **Where is this in IFC?**
 
