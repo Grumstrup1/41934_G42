@@ -1,25 +1,32 @@
+import ifcopenshell
+import ifcopenshell.geom
+import numpy as np
 import matplotlib.pyplot as plt
 
+
+settings = ifcopenshell.geom.settings()
+settings.set(settings.USE_WORLD_COORDS, True)
+
+
 def open_ifc(path):
-    import ifcopenshell
     try:
         model = ifcopenshell.open(path)
-        print("✔ IFC model loaded")
+        print("IFC model loaded successfully.")
         return model
     except:
-        print("❌ Failed to open IFC file")
+        print("Failed to open IFC file.")
         return None
 
-# ---------------------------
-# Helpers
-# ---------------------------
+
 def element_is_external(elem):
     try:
         if hasattr(elem, "IsExternal") and elem.IsExternal is not None:
             return bool(elem.IsExternal)
     except:
         pass
-    return False
+    name = str(getattr(elem, "Name", "")).lower()
+    return "exterior" in name
+
 
 def element_is_load_bearing(elem):
     try:
@@ -29,10 +36,11 @@ def element_is_load_bearing(elem):
         pass
     return False
 
+
 def get_quantity_area(elem):
-    """Extract area from IfcQuantityArea if available"""
     if not hasattr(elem, "IsDefinedBy"):
         return None
+
     for rel in elem.IsDefinedBy:
         pset = rel.RelatingPropertyDefinition
         if pset and pset.is_a("IfcElementQuantity"):
@@ -44,9 +52,38 @@ def get_quantity_area(elem):
                         continue
     return None
 
-# ---------------------------
-# Option 1: Count elements
-# ---------------------------
+
+def compute_projected_area(verts, faces, axis=2):
+    verts2d = np.delete(verts, axis, axis=1)
+    area = 0.0
+    for f in faces:
+        v0, v1, v2 = verts2d[f]
+        area += abs(np.cross(v1 - v0, v2 - v0)) / 2.0
+    return area
+
+
+def geom_area(elem, elem_type):
+    try:
+        shape = ifcopenshell.geom.create_shape(settings, elem)
+        geom = shape.geometry
+        verts = np.array(geom.verts).reshape((-1, 3))
+        faces = np.array(geom.faces).reshape((-1, 3))
+
+        if elem_type in ["INTERNAL_WALL", "EXTERNAL_WALL"]:
+            area_xz = compute_projected_area(verts, faces, axis=1)
+            area_yz = compute_projected_area(verts, faces, axis=0)
+            return max(area_xz, area_yz) * 0.5
+
+        if elem_type in ["CEILING", "ROOF", "FLOOR"]:
+            area_xy = compute_projected_area(verts, faces, axis=2)
+            return area_xy * 0.5
+
+        return 0.0
+
+    except:
+        return 0.0
+
+
 def count_elements(model):
     counts = {
         "WINDOW": len(model.by_type("IfcWindow")),
@@ -56,7 +93,7 @@ def count_elements(model):
         "FLOOR": len(model.by_type("IfcSlab")),
         "CEILING": len(model.by_type("IfcCovering")),
         "ROOF": len(model.by_type("IfcRoof")),
-        "CURTAIN_WALL": len(model.by_type("IfcCurtainWall"))
+        "CURTAIN_WALL": len(model.by_type("IfcCurtainWall")),
     }
 
     walls = model.by_type("IfcWall") + model.by_type("IfcWallStandardCase")
@@ -70,127 +107,100 @@ def count_elements(model):
 
     return counts
 
-# ---------------------------
-# Option 2: Calculate areas
-# ---------------------------
+
 def calculate_areas(model, default_areas):
-    """
-    Calculates areas using:
-    - IFC Quantity Area if available (for walls, slabs, coverings, roofs)
-    - OverallHeight x OverallWidth for windows/doors
-    - Fallback default if no geometry
-    Returns areas dict or None if user cancels
-    """
     areas = {k: 0.0 for k in default_areas.keys()}
-    missing_count = {k: 0 for k in default_areas.keys()}
+    approximated = {k: 0 for k in default_areas.keys()}
+    defaulted = {k: 0 for k in default_areas.keys()}
 
     def calc_area(elem, elem_type):
-        # Use IFC Quantity Area if available for walls/slabs/coverings/roofs
-        if elem_type in ["INTERNAL_WALL", "EXTERNAL_WALL", "FLOOR", "CEILING", "ROOF"]:
-            q_area = get_quantity_area(elem)
-            if q_area:
-                return q_area, False
-        # For windows/doors use OverallHeight * OverallWidth
-        height = getattr(elem, "OverallHeight", None)
-        width = getattr(elem, "OverallWidth", None) or getattr(elem, "OverallLength", None)
-        if height and width:
-            return float(height)/1000 * float(width)/1000, False
-        # fallback
-        return default_areas[elem_type], True
+        q_area = get_quantity_area(elem)
+        if q_area:
+            return q_area, False, False
 
-    # Windows
-    for w in model.by_type("IfcWindow"):
-        area, missing = calc_area(w, "WINDOW")
-        areas["WINDOW"] += area
-        if missing:
-            missing_count["WINDOW"] += 1
+        if elem_type in ["WINDOW", "DOOR"]:
+            h = getattr(elem, "OverallHeight", None)
+            w = getattr(elem, "OverallWidth", None) or getattr(elem, "OverallLength", None)
+            if h and w:
+                return float(h) / 1000 * float(w) / 1000, False, False
 
-    # Doors
-    for d in model.by_type("IfcDoor"):
-        area, missing = calc_area(d, "DOOR")
-        areas["DOOR"] += area
-        if missing:
-            missing_count["DOOR"] += 1
+        g_area = geom_area(elem, elem_type)
+        if g_area > 0:
+            return g_area, True, False
 
-    # Walls
+        return default_areas.get(elem_type, 1.0), False, True
+
+    def add_area(elems, key):
+        for e in elems:
+            if key in ["INTERNAL_WALL", "EXTERNAL_WALL"] and element_is_load_bearing(e):
+                continue
+            area, approx, def_used = calc_area(e, key)
+            areas[key] += area
+            if approx:
+                approximated[key] += 1
+            if def_used:
+                defaulted[key] += 1
+
+    add_area(model.by_type("IfcWindow"), "WINDOW")
+    add_area(model.by_type("IfcDoor"), "DOOR")
+
     walls = model.by_type("IfcWall") + model.by_type("IfcWallStandardCase")
-    for wall in walls:
-        if element_is_load_bearing(wall):
+    for w in walls:
+        if element_is_load_bearing(w):
             continue
-        elem_type = "EXTERNAL_WALL" if element_is_external(wall) else "INTERNAL_WALL"
-        area, missing = calc_area(wall, elem_type)
-        areas[elem_type] += area
-        if missing:
-            missing_count[elem_type] += 1
+        key = "EXTERNAL_WALL" if element_is_external(w) else "INTERNAL_WALL"
+        area, approx, def_used = calc_area(w, key)
+        areas[key] += area
+        if approx:
+            approximated[key] += 1
+        if def_used:
+            defaulted[key] += 1
 
-    # Floors
-    for f in model.by_type("IfcSlab"):
-        if element_is_load_bearing(f):
-            continue
-        area, missing = calc_area(f, "FLOOR")
-        areas["FLOOR"] += area
-        if missing:
-            missing_count["FLOOR"] += 1
+    add_area(model.by_type("IfcSlab"), "FLOOR")
+    add_area(model.by_type("IfcCovering"), "CEILING")
+    add_area(model.by_type("IfcRoof"), "ROOF")
+    add_area(model.by_type("IfcCurtainWall"), "CURTAIN_WALL")
 
-    # Ceilings
-    for c in model.by_type("IfcCovering"):
-        if element_is_load_bearing(c):
-            continue
-        area, missing = calc_area(c, "CEILING")
-        areas["CEILING"] += area
-        if missing:
-            missing_count["CEILING"] += 1
+    printed = False
 
-    # Roofs
-    for r in model.by_type("IfcRoof"):
-        if element_is_load_bearing(r):
-            continue
-        area, missing = calc_area(r, "ROOF")
-        areas["ROOF"] += area
-        if missing:
-            missing_count["ROOF"] += 1
+    if any(approximated.values()):
+        print("\nThe following elements were approximated using geometric projections:")
+        for k, c in approximated.items():
+            if c > 0:
+                print(f"{k.replace('_',' ').title()}: {c}")
+        printed = True
 
-    # Curtain walls
-    for cw in model.by_type("IfcCurtainWall"):
-        area, missing = calc_area(cw, "CURTAIN_WALL")
-        areas["CURTAIN_WALL"] += area
-        if missing:
-            missing_count["CURTAIN_WALL"] += 1
+    if any(defaulted.values()):
+        print("\nThe following elements used default area values:")
+        for k, c in defaulted.items():
+            if c > 0:
+                print(f"{k.replace('_',' ').title()}: {c}")
+        printed = True
 
-    # Summarize missing geometry
-    missing_summary = {k: v for k, v in missing_count.items() if v > 0}
-    if missing_summary:
-        print("\n⚠ Warning: Some elements had no geometry or quantity data:")
-        for k, v in missing_summary.items():
-            print(f"   {v} {k.replace('_',' ').title()} element(s)")
-        proceed = input("Do you want to continue using default values for these? (y/n): ")
-        if proceed.lower() != "y":
-            print("Calculation cancelled by user.")
-            return None
+    if printed:
+        input("\nPress Enter to continue...")
 
     return areas
 
-# ---------------------------
-# Cost estimation
-# ---------------------------
-def estimate_cost(counts_or_areas, prices):
-    return sum(counts_or_areas[k] * prices.get(k,0) for k in counts_or_areas)
 
-# ---------------------------
-# Pie chart
-# ---------------------------
-def show_cost_pie_chart(counts_or_areas, prices):
+def estimate_cost(areas, prices):
+    return sum(areas[k] * prices.get(k, 0) for k in areas)
+
+
+def show_cost_pie_chart(areas, prices):
     labels = []
     values = []
-    for k in counts_or_areas:
-        cost = counts_or_areas[k] * prices.get(k,0)
+    for k in areas:
+        cost = areas[k] * prices.get(k, 0)
         if cost > 0:
-            labels.append(k.replace("_"," ").title())
+            labels.append(k.replace("_", " ").title())
             values.append(cost)
+
     if not values:
-        print("No costs available to show!")
+        print("No cost data to show.")
         return
-    plt.figure(figsize=(7,7))
+
+    plt.figure(figsize=(7, 7))
     plt.pie(values, labels=labels, autopct="%1.1f%%")
     plt.title("Cost Distribution of Architectural Elements")
     plt.show()
