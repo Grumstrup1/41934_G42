@@ -27,7 +27,7 @@ Instructions to run the tool.
 
 We implemented a simple IDS to determine whether an IFC model contains the quantity properties our cost tool requires. The IDS validates whether elements such as windows, doors, walls, slabs, ceilings, roofs, and curtain walls include their expected BaseQuantities (e.g., `Area`, `NetSideArea`).
 
-The IDS is implemented in **`A3/ids_arch_for_cost.py`** using the `ifctester` API.  
+The IDS is implemented in **[`ids_arch_for_cost.py`](ids_arch_for_cost.py)**  using the `ifctester` API.  
 It generates the IDS programmatically, validates any IFC file, and reports:
 
 - A **compatibility status** for our tool  
