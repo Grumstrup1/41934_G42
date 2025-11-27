@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ids:ids xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd" xmlns:ids="http://standards.buildingsmart.org/IDS">
+	<ids:info>
+		<ids:title />
+	</ids:info>
+	<ids:specifications>
+		<ids:specification ifcVersion="IFC4 IFC4X3_ADD2" name="Geometry Data avaliable for IFCWindow" identifier="ce8d03fa-565b-40fc-97fa-168c20962c5e">
+			<ids:applicability minOccurs="1" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCWINDOW" />
+							<xs:enumeration value="IFCWINDOWSTANDARDCASE" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:attribute cardinality="required">
+					<ids:name>
+						<ids:simpleValue>OverallHeight</ids:simpleValue>
+					</ids:name>
+				</ids:attribute>
+				<ids:attribute cardinality="required">
+					<ids:name>
+						<ids:simpleValue>OverallWidth</ids:simpleValue>
+					</ids:name>
+				</ids:attribute>
+			</ids:requirements>
+		</ids:specification>
+		<ids:specification ifcVersion="IFC4 IFC4X3_ADD2" name="Geometry Data avaliable for IFCDoor" identifier="55942fd3-0311-4d08-810f-b190b5342a08">
+			<ids:applicability minOccurs="1" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCDOOR" />
+							<xs:enumeration value="IFCDOORSTANDARDCASE" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:attribute cardinality="required">
+					<ids:name>
+						<ids:simpleValue>OverallHeight</ids:simpleValue>
+					</ids:name>
+				</ids:attribute>
+				<ids:attribute cardinality="required">
+					<ids:name>
+						<ids:simpleValue>OverallWidth</ids:simpleValue>
+					</ids:name>
+				</ids:attribute>
+			</ids:requirements>
+		</ids:specification>
+		<ids:specification ifcVersion="IFC4 IFC4X3_ADD2" name="Geometry Data avaliable for IFCRoof" identifier="3a1cff7d-2762-4b80-a72d-640eeed1505e">
+			<ids:applicability minOccurs="1" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCROOF" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCQUANTITYAREA" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:requirements>
+		</ids:specification>
+		<ids:specification ifcVersion="IFC4 IFC4X3_ADD2" name="Geometry Data avaliable for IFCSlab" identifier="39b456bc-d2c7-42b0-aca0-d3cdf82ea627">
+			<ids:applicability minOccurs="1" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCSLAB" />
+							<xs:enumeration value="IFCSLABELEMENTEDCASE" />
+							<xs:enumeration value="IFCSLABSTANDARDCASE" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCQUANTITYAREA" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:requirements>
+		</ids:specification>
+		<ids:specification ifcVersion="IFC4 IFC4X3_ADD2" name="Geometry Data avaliable for IFCWall" identifier="a14d5c54-7b4c-4d81-9472-741009d98880">
+			<ids:applicability minOccurs="1" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCWALL" />
+							<xs:enumeration value="IFCWALLSTANDARDCASE" />
+							<xs:enumeration value="IFCWALLELEMENTEDCASE" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCQUANTITYAREA" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:requirements>
+		</ids:specification>
+		<ids:specification ifcVersion="IFC4" name="Geometry Data for IFCCovering" identifier="2848c175-22a0-4eb1-9620-5036e415e322">
+			<ids:applicability minOccurs="1" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCCOVERING" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCQUANTITYAREA" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:requirements>
+		</ids:specification>
+		<ids:specification ifcVersion="IFC4" name="Geometry Data for IFCCurtainWall" identifier="38285c1b-5a43-446c-b408-d280a5442dd7">
+			<ids:applicability minOccurs="0" maxOccurs="unbounded">
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCCURTAINWALL" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:applicability>
+			<ids:requirements>
+				<ids:entity>
+					<ids:name>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="IFCQUANTITYAREA" />
+						</xs:restriction>
+					</ids:name>
+					<ids:predefinedType>
+						<ids:simpleValue></ids:simpleValue>
+					</ids:predefinedType>
+				</ids:entity>
+			</ids:requirements>
+		</ids:specification>
+	</ids:specifications>
+</ids:ids>
