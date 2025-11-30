@@ -3,7 +3,8 @@
 ## Summary
 **Title:** IFC architectural cost estimator tool
 **Category:** Build / Cost / Buildability / Permits  
-**Description (20–40 words):**  
+**Description (20–40 words):** 
+
 
 ---
 
@@ -81,9 +82,12 @@ For the cost estimation, it becomes more reliable in the D phase, during the pro
 
 ### Which subjects might use it?
 This would mainly be the project manager, while the tool is for cost estimation. It could also be useful for checking the ICT classifications, and if more area information is necessary, to get a more efficient calculation.
-It could also be relevant to materials for the LCI extraction of amounts and volumes from the Arch IFC . 
+It could also be relevant to materials for the LCI extraction of amounts and volumes from the Arch IFC. 
 
-What information is required in the model for your tool to work?
+### What information is required in the model for your tool to work?
+For the tool to work, the IFC model needs to contain architectural elements. The script looks for windows, doors, walls, slabs, ceilings, roofs, and curtain walls. 
+Use option 2 to check elements, and see if it matches your expected amount. 
+The tool works best when the model includes quantity data like IfcQuantityArea or simpler parameters like height and width for windows and doors. If these are missing, the geometry must be detailed enough for IfcOpenShell to calculate projected areas. IF none of this is available, the tool falls back on default areas, so it can still run, but the areas have to be calculated or found manually.
 
 
 ---
