@@ -13,7 +13,7 @@ The problem comes from working as a project manager in earlier projects, where w
 The tool consists of two Python scripts:
 
 - **[main.py](A3/main.py)** - handles the menu, terminal interaction, and the catalog for prices and default areas  
-- **[utils.py](A3/utils.py)** - contains all functions for reading the IFC, classifying elements, calculating areas, and estimating costs  
+- **[utils.py](A3/utils.py)** - handles all IFC-related data extraction, geometry processing, filtering, and cost-calculation functionality.
 
 The tool requires access to the IFC file on the computer running it.
 
