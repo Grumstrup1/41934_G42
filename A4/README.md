@@ -14,5 +14,4 @@ A demonstration showing how to run the tool and use the main functions:  [Watch 
 ### Markdown walkthrough
 A written explanation of the code and how each part of the script works: [Walkthrough.ipynb](A4/Walkthrough.ipynb)
 
-The files for the tool can be found in [A3](A3/README.md), as well as written instructions on how to run the tool in the folder [A3](A3/README.md) under the section "Instructions to run the tool". 
-The files for the tool are located in the [A3](A3) folder, and a full description of how to run the tool can be found in [A3/README.md](A3/README.md) under the section *“Instructions to run the tool”*.
+**Additional:** The files for the tool can be found in [A3](41934_G42/A3), as well as written instructions on how to run the tool in the folder [A3](41934_G42/A3/README.md) under the section "Instructions to run the tool". 
