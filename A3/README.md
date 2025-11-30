@@ -19,25 +19,48 @@ Cost estimation and budgeting for building projects are a central part of the pr
 By creating a tool that can not only validate the claimed cost estimation but also create its own cost estimation based on quantities from the IFC models, more accurate cost estimations can be made, resulting in better decision-making and budgeting.
 
 **State where you found that problem.**
-The problem is found while working with cost estimation, where it is hard to either load in the file correctly and having to check everything through, making sure to use the right quantities or having to count, because things aren't named specifically enough to do it automatically. 
+The issue appears when working with IFC files/models for cost estimation. It is often difficult to load the file correctly, extract the right quantities, or rely on correct and thorough use of classification systems. As a result, quantities must often be checked manually, and missing data makes the process unreliable.
 
 **Description of the tool**
-The tool is a standalone Python tool, which consists of two Python scripts, a utility, and a main. The code runs through an IFC-file to check and extract the relevant data. The tool requires that the applicable IFC file be available on the computer running the tool, knowing the file path.
+The tool consists of two Python scripts:
 
-The main script gives the outputs 
-Price catalog change the prices 
+- `main.py` – handles the menu, terminal interaction, and user choices  
+- `utils.py` – contains all functions for reading the IFC, classifying elements, calculating areas, and estimating costs  
+
+The tool requires access to the IFC file on the computer running it (the user must supply the file path).
+
+The script processes the model and calculates areas in the following order:
+
+1. `IfcQuantityArea`
+2. Height × width (for windows/doors)  
+3. Geometric projection using IfcOpenShell  
+4. Default fallback area (user-defined)  
+
+Prices and default areas can be changed both before running the tool in the script and also directly in the terminal.
 
 **Instructions to run the tool.**
-To run the tool, you need to download IFCOpenShell and Python. Make sure you have both Python files, and now you can run the main script. 
+To run the tool, you need to have installed IFCOpenShell and Python. Make sure both `main.py` and `utils.py` are downloaded and placed in the same folder. 
 
-Everything will be in the terminal, the first thing it will ask is to enter the file path for the chosen IFC model
+In `main.py` you can adjust two dictionaries before you start:
+
+- `prices`: price DKK per m² for each element type  
+- `default_areas`: fallback areas for each element type  in m²
+
+It is a good idea to update these to match your project:
+
+- Update **prices** if you have specific unit prices from an adviser or supplier.  
+- Update **default_areas** if you know typical areas for elements that may be missing geometry or quantity data in the IFC.
+
+Both can also be changed later in the terminal using the menu options.
+
+When starting to run the script, the first thing it will ask is to enter the file path for the chosen IFC model
 If it loads, it will state IFC model loaded successfully, and an options menu will pop up. If not, you get an error.
 
-The menu has the following options
+The menu has the following options:
 
 <img width="1244" height="342" alt="image" src="https://github.com/user-attachments/assets/f6b6770d-9f8f-45a5-802a-fc0951a918c6" /> 
 
-1) Show element count -  Counts each architectural element type. Internal/external walls are automatically separated based on IFC properties and naming.
+1) Show element count -  Counts each architectural element type. Internal/external walls are automatically separated based on IFC properties and naming. Walls marked as load-bearing in the IFC are ignored for this tool.
 
 2) Show element areas - extract, calculate, or approximate area. This takes longer because the tool tries several methods to determine the area:
    IfcQuantityArea
@@ -45,18 +68,18 @@ The menu has the following options
    Geometric projection (IfcOpenShell geom)
    Fallback defaults from the script
 If an element had to be approximated or defaulted, the script lists both the element type and the amount:
-<img width="1215" height="510" alt="image" src="https://github.com/user-attachments/assets/acc1965f-5acb-4156-8b13-9a8e6007eeb6" />
-Here, it is smart to update all defaulted areas in the default area in the main script to ensure correct information. 
+<img width="1229" height="355" alt="image" src="https://github.com/user-attachments/assets/8d1588b6-4790-4ca0-b34c-e0bb3d074d93" />
+If many elements use default areas, it is a good idea to update the values in default_areas in main.py to ensure correct data.
 
-3) Estimate cost - The tool multiplies every element’s area by its price from the price catalog.
-   Therefore also important to make sure to update the price catalog to the prices used in the specific project. This is done in the main.py under prices, or see       the picture below.
+3) Estimate cost - The tool multiplies every element’s area by its price from the price catalog. The script then prints the total estimated cost in DKK.
+Therefore also important to make sure to update the price catalog to the prices used in the specific project. This is done in main.py under prices, see the picture below.
 <img width="1077" height="289" alt="image" src="https://github.com/user-attachments/assets/b52a49c5-14ed-4a43-bfa0-9236908821c2" />
 
-4) Change element price - for changing the price while running the script, instead os using the price catalog at the beginning of the script, the prices can be updated directly in the terminal. Also Useful if you want to compare different material choices or suppliers.
+5) Change element price - for changing the price while running the script, instead os using the price catalog at the beginning of the script, the prices can be updated directly in the terminal. Also Useful if you want to compare different material choices or suppliers.
 
-5) Change element default area - For cases where geometry is missing, each element type has a fallback area. If you know your project uses larger roofs or curtain walls, adjust them here. 
+6) Change element default area - For cases where geometry is missing, each element type has a fallback area. If you know your project uses larger roofs or curtain walls, adjust them here. 
 
-6) Show cost pie chart - Opens a pie chart showing each element type’s share of total cost.
+7) Show cost pie chart - Opens a pie chart showing each element type’s share of total cost.
 This gives a quick overview of which elements in the ARCH require more budget.
 
 9) Quit - Ends the script.
