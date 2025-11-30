@@ -15,12 +15,12 @@ The tool consists of two Python scripts:
 - **[main.py](A3/main.py)** - handles the menu, terminal interaction, and the catalog for prices and default areas  
 - **[utils.py](A3/utils.py)** - contains all functions for reading the IFC, classifying elements, calculating areas, and estimating costs  
 
-The tool requires access to the IFC file on the computer running it (paste the full file path when the script asks for it).
+The tool requires access to the IFC file on the computer running it.
 
-The purpose of the tool is to give a fast and simple way to check quantities and costs directly from an IFC model. The script provides a quick pre- or post-estimation overview. This makes it easier to validate existing cost estimates or acquire early economic insight without needing a full classic estimation workflow.
+The purpose of the tool is to give a fast and simple way to check quantities and costs directly from an IFC model. The script provides a quick cost estimation overview. This makes it easier to validate existing cost estimates or acquire early economic insight without needing a full classic estimation workflow.
 
 ## Instructions to run the tool
-To run the tool, you need IFCOpenShell and Python installed. Download [main.py](A3/main.py) and [utils.py](A3/utils.py) and place them in the same folder. 
+To run the tool, you need Python installed aswell as IfcOpenShell, numpy and matplotlib. Download [main.py](A3/main.py) and [utils.py](A3/utils.py) and place them in the same folder. 
 For a video tutorial, follow the link [here](https://youtu.be/iAVOLkmRwe0)
 
 In [main.py](A3/main.py), you can adjust two things before you start:
@@ -65,20 +65,18 @@ If many elements use default areas, it is recommended to update the values in de
 
 ## Advanced Building Design
 ### What Advanced Building Design Stage (A,B,C, or D) would your tool be useful?
-The tool works better the more information there is in the IFC model. It can be used early for rough estimations, but the results become meaningful once dimensions and materials are known. Showing element areas and checking the IFC data can already be useful in the early phase C. For cost estimation, the tool is most reliable in phase D, when the IFC is more complete, and the data is stable.
+The tool works better the more information there is in the IFC model. It can be used early for rough estimations, but the results become meaningful once dimensions and element prices are known. Showing element areas and checking the IFC data can already be useful in the early phase C. For cost estimation, the tool is most reliable in phase D, when the IFC is more complete, and more data is available.
 
 ### Which subjects might use it?
 This would mainly be the project manager, since they are responsible for the cost estimation. The tool can also be useful for checking ICT classifications and seeing if more area information is needed for a more efficient calculation.  
-It can also support material, for example, extracting LCI quantities and volumes from the architectural IFC.
 
 ### What information is required in the model for your tool to work?
-The tool requires the IFC model to contain basic architectural elements such as windows, doors, walls, slabs, ceilings, roofs, and curtain walls. Use menu option 2 to check whether the element counts match your expectations.  
-The tool works best when the model includes IfcQuantityArea or simple dimensions such as height and width. If these are missing, the IFC must have enough geometry for IfcOpenShell to calculate projected areas. If none of this is available, the tool falls back on default areas, so the script will still run, but the areas must then be verified manually.
+The tool requires the IFC model to contain basic architectural elements such as windows, doors, walls, slabs, ceilings, roofs, and curtain walls. The tool works best when the model includes IfcQuantityArea or simple dimensions such as height and width. If these are missing, the IFC must have enough geometry for IfcOpenShell to calculate projected areas. If none of this is available, the tool falls back on default areas, so the script will still run, but the areas must then be verified manually.
 
 ---
 
 ## 04 - IDS
-The IDS file tests whether the IFC model contains area quantities for the architectural elements needed by our tool. It checks for OverallHeight and OverallWidth on windows and doors aswell as IfcQuantityArea on walls, slabs, ceilings, roofs, and curtain walls. If the model includes these, the cost output is more accurate; if not, the tool switches to geometry or default areas.
+The IDS file tests whether the IFC model contains area quantities for the architectural elements needed by our tool. It checks for OverallHeight and OverallWidth for windows and doors aswell as IfcQuantityArea for walls, slabs, ceilings, roofs, and curtain walls.
 
 
 
