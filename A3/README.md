@@ -12,22 +12,23 @@ The problem comes from working as a project manager in earlier projects, where w
 ## Description of the tool
 The tool consists of two Python scripts:
 
-- **main.py** - handles the menu, terminal interaction, and the catalog for prices and default areas  
-- **utils.py** - contains all functions for reading the IFC, classifying elements, calculating areas, and estimating costs  
+- **[main.py](A3/main.py)** - handles the menu, terminal interaction, and the catalog for prices and default areas  
+- **[utils.py](A3/utils.py)** - contains all functions for reading the IFC, classifying elements, calculating areas, and estimating costs  
 
 The tool requires access to the IFC file on the computer running it (paste the full file path when the script asks for it).
 
 ## Instructions to run the tool
-To run the tool, you need IFCOpenShell and Python installed. Download main.py and utils.py and place them in the same folder.
+To run the tool, you need IFCOpenShell and Python installed. Download [main.py](A3/main.py) and [utils.py](A3/utils.py) and place them in the same folder. 
+For a video tutorial, follow the link [her](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-In main.py, you can adjust two things before you start:
+In [main.py](A3/main.py), you can adjust two things before you start:
 
 - **prices**: price in DKK per m² for each element type  
 - **default_areas**: fallback areas in m² for each element type  
 
 Both can also be changed later in the terminal through the menu.
 
-When starting the script, the first thing it asks for is the file path to the IFC model. If the file loads, it prints *“IFC model loaded successfully”* and shows the menu. If not, it prints an error.
+When starting the script, the first thing it asks for is the file path to the IFC model. If the file loads, it prints “IFC model loaded successfully” and shows the menu. If not, it prints an error.
 
 **The menu has the following options:**
 
@@ -43,24 +44,26 @@ This takes longer because the tool tries several methods in this order:
 3. Geometric projection using IfcOpenShell  
 4. Default fallback area (user-defined)  
 
-If an element had to be approximated or defaulted, the script lists how many of each type:
+If an element had to be approximated or defaulted, the script lists how many of each type (example of output below):
 <img width="1229" height="355" alt="image" src="https://github.com/user-attachments/assets/8d1588b6-4790-4ca0-b34c-e0bb3d074d93" />
 If many elements use default areas, it is recommended to update the values in default_areas in main.py.
 
-3) **Estimate cost** - Multiplies every element’s area by its price from the price catalog and prints the total estimated cost in DKK. It is important to update the prices to match the specific project. Prices are defined in main.py under prices
+3) **Estimate cost** - Multiplies every element’s area by its price from the price catalog and prints the total estimated cost in DKK. It is important to update the prices to match the specific project. Prices are defined in main.py under prices (see picture below).
 <img width="1077" height="289" alt="image" src="https://github.com/user-attachments/assets/b52a49c5-14ed-4a43-bfa0-9236908821c2" />
 
 5) **Change element price** - Updates the price for an element type while the script is running. Useful for comparing different materials or supplier prices without editing the script.
 
-6) **Change element default area** - Updates the fallback areas used when the IFC does not provide geometry or quantity data. Can also be updated in the script main.py under default_areas
+6) **Change element default area** - Updates the fallback areas used when the IFC does not provide geometry or quantity data. It can also be updated in the script main.py under default_areas (see picture below).
+<img width="1188" height="256" alt="image" src="https://github.com/user-attachments/assets/bfe482d6-b8af-4bbc-a7fd-841204c77d61" />
+
 
 7) **Show cost pie chart** - Opens a pie chart showing each element type’s share of the total cost. Gives a quick overview of which architectural elements drive the budget.
 
-9) **Quit** - Ends the script.
+8) **Quit** - Ends the script.
 
 ## Advanced Building Design
 ### What Advanced Building Design Stage (A,B,C, or D) would your tool be useful?
-The tool works better the more information there is in the IFC model. It can be used early for rough estimations, but the results become meaningful once dimensions and materials are known. Showing element areas and checking the IFC data can already be useful in the early phase C. For cost estimation, the tool is most reliable in phase D, when the IFC is more complete and the data is stable.
+The tool works better the more information there is in the IFC model. It can be used early for rough estimations, but the results become meaningful once dimensions and materials are known. Showing element areas and checking the IFC data can already be useful in the early phase C. For cost estimation, the tool is most reliable in phase D, when the IFC is more complete, and the data is stable.
 
 ### Which subjects might use it?
 This would mainly be the project manager, since they are responsible for the cost estimation. The tool can also be useful for checking ICT classifications and seeing if more area information is needed for a more efficient calculation.  
