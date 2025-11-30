@@ -1,7 +1,7 @@
 ## Summary
 
-Title: your title (5-10 words)
+Title: Rapid IFC-Based Architectural Cost Estimator
 
-Category: your category
+Category: Architectural Cost Estimation
 
-Description: your description (20-40 words)
+Description: This video tutorial and walkthrough show how the tool supports quick pre- or post-estimation checks, offering an approachable way to validate existing cost estimations or gain early economic insight without committing to a complete, comprehensive estimate.
