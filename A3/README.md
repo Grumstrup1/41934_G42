@@ -93,5 +93,5 @@ The tool works best when the model includes quantity data like IfcQuantityArea o
 ---
 
 ## 04 — IDS: Model Readiness Check
-
+The IDS file tests whether the IFC model contains area quantities for the architectural elements needed by the our tool. It checks IfcQuantityArea on windows, doors, walls, slabs, ceilings, roofs and curtain walls. If the model includes these, the cost output is more accurate; if not, the tool switches to geometry or default areas.
 
