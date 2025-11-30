@@ -2,7 +2,7 @@
 
 ---
 
-## State the problem/claim that your tool is solving.
+## State the problem
 Cost estimation is a time-consuming task, especially when IFC models have to be loaded into programs like Sigma, where setup, formatting issues, and error diagnosis take up a lot of time. This makes it difficult to get a fast overview of the cost of the project.
 Our Rapid IFC-Based Architectural Cost Estimator removes most of that setup and error handling. It reads the IFC directly and gives a quick overview of the architectural quantities and cost. Also, good data to compare results with the traditional cost estimation.
 
