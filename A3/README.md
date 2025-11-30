@@ -78,8 +78,7 @@ The tool works best when the model includes IfcQuantityArea or simple dimensions
 ---
 
 ## 04 - IDS
-The IDS file tests whether the IFC model contains area quantities for the architectural elements needed by our tool. It checks IfcQuantityArea on windows, doors, walls, slabs, ceilings, roofs, and curtain walls. If the model includes these, the cost output is more accurate; if not, the tool switches to geometry or default areas.
-
+The IDS file tests whether the IFC model contains area quantities for the architectural elements needed by our tool. It checks for OverallHeight and OverallWidth on windows and doors aswell as IfcQuantityArea on walls, slabs, ceilings, roofs, and curtain walls. If the model includes these, the cost output is more accurate; if not, the tool switches to geometry or default areas.
 
 
 
