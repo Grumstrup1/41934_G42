@@ -19,7 +19,7 @@ The tool requires access to the IFC file on the computer running it (paste the f
 
 ## Instructions to run the tool
 To run the tool, you need IFCOpenShell and Python installed. Download [main.py](A3/main.py) and [utils.py](A3/utils.py) and place them in the same folder. 
-For a video tutorial, follow the link [her](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+For a video tutorial, follow the link [her](https://youtu.be/iAVOLkmRwe0)
 
 In [main.py](A3/main.py), you can adjust two things before you start:
 
