@@ -6,8 +6,13 @@
 
 **Description:** This video tutorial and walkthrough show how the tool supports quick pre- or post-estimation checks, offering an approachable way to validate existing cost estimations or gain early economic insight without committing to a complete, comprehensive estimate.
 
+## Tutorial Formats
+
 ### Video tutorial
-A demonstration of how to run the tool, load an IFC file, use the menu options, and understand the outputs: [Watch the tutorial on YouTube](https://youtu.be/iAVOLkmRwe0)
+A demonstration showing how to run the tool and use the main functions:  [Watch the tutorial on YouTube](https://youtu.be/iAVOLkmRwe0)
 
 ### Markdown walkthrough
-A written explanation of the code and how each part of the script works, including how areas are calculated and how the cost estimation is generated [Walkthrough.md](A4/Walkthrough.md)
+A written explanation of the code and how each part of the script works: [Walkthrough.ipynb](A4/Walkthrough.ipynb)
+
+The files for the tool can be found in [A3](A3/README.md), as well as written instructions on how to run the tool in the folder [A3](A3/README.md) under the section "Instructions to run the tool". 
+The files for the tool are located in the [A3](A3) folder, and a full description of how to run the tool can be found in [A3/README.md](A3/README.md) under the section *“Instructions to run the tool”*.
