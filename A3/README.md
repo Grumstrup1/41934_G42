@@ -35,7 +35,7 @@ In main.py, you can adjust two things before you start:
 - default_areas: fallback areas for each element type  in m²
 Both can also be changed later in the terminal using the menu options.
 
-When starting to run the script, the first thing it will ask is to enter the file path for the chosen IFC model
+When starting to run the script, the first thing it will ask is to enter the file path for the chosen IFC model.
 If it loads, it will state IFC model loaded successfully, and an options menu will pop up. If not, you get an error.
 
 The menu has the following options:
@@ -71,18 +71,23 @@ This gives a quick overview of which elements in the ARCH require more budget.
 
 9) **Quit** - Ends the script.
 
+## Advanced Building Design
+### What Advanced Building Design Stage (A,B,C, or D) would your tool be useful?
+The tool works better the more information there is in the IFC model, meaning it can be used for estimations right from when the IFC model has been made, but the results are only useful after more data is given.
+The showing of element areas and checking the information in the IFC file can be useful in earlier stages, maybe early C, while the cost estimation needs the dimensions and materials to get a relevant result.
+
+Therefore, we would recommend trying out the tool in phase C for an overview and early estimate, checking the area information on the elements.
+For the cost estimation, it becomes more reliable in the D phase, during the process of finalizing the BIM, as well as the final IFC, for the most accurate data.
+
+### Which subjects might use it?
+This would mainly be the project manager, while the tool is for cost estimation. It could also be useful for checking the ICT classifications, and if more area information is necessary, to get a more efficient calculation.
+It could also be relevant to materials for the LCI extraction of amounts and volumes from the Arch IFC . 
+
+What information is required in the model for your tool to work?
+
+
 ---
 
 ## 04 — IDS: Model Readiness Check
 
-We implemented a simple IDS to determine whether an IFC model contains the quantity properties our cost tool requires. The IDS validates whether elements such as windows, doors, walls, slabs, ceilings, roofs, and curtain walls include their expected BaseQuantities (e.g., `Area`, `NetSideArea`).
 
-The IDS is implemented in **[`ids_arch_for_cost.py`](ids_arch_for_cost.py)**  using the `ifctester` API.  
-It generates the IDS programmatically, validates any IFC file, and reports:
-
-- A **compatibility status** for our tool  
-  (“Fully supported”, “Partially supported”, or “Supported with fallback”)
-- A **data completeness score** (%)  
-- PASS/FAIL checks for required quantity properties
-
-This shows whether the IFC model contains the information needed for reliable cost estimation or whether our tool must fall back to geometry-based calculations.
