@@ -19,7 +19,7 @@ The tool requires access to the IFC file on the computer running it (paste the f
 
 ## Instructions to run the tool
 To run the tool, you need IFCOpenShell and Python installed. Download [main.py](A3/main.py) and [utils.py](A3/utils.py) and place them in the same folder. 
-For a video tutorial, follow the link [her](https://youtu.be/iAVOLkmRwe0)
+For a video tutorial, follow the link [here](https://youtu.be/iAVOLkmRwe0)
 
 In [main.py](A3/main.py), you can adjust two things before you start:
 
@@ -75,7 +75,7 @@ The tool works best when the model includes IfcQuantityArea or simple dimensions
 
 ---
 
-## 04 — IDS: Model Readiness Check
+## 04 - IDS
 The IDS file tests whether the IFC model contains area quantities for the architectural elements needed by our tool. It checks IfcQuantityArea on windows, doors, walls, slabs, ceilings, roofs, and curtain walls. If the model includes these, the cost output is more accurate; if not, the tool switches to geometry or default areas.
 
 
