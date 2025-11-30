@@ -17,6 +17,8 @@ The tool consists of two Python scripts:
 
 The tool requires access to the IFC file on the computer running it (paste the full file path when the script asks for it).
 
+The purpose of the tool is to give a fast and simple way to check quantities and costs directly from an IFC model. The script provides a quick pre- or post-estimation overview. This makes it easier to validate existing cost estimates or acquire early economic insight without needing a full classic estimation workflow.
+
 ## Instructions to run the tool
 To run the tool, you need IFCOpenShell and Python installed. Download [main.py](A3/main.py) and [utils.py](A3/utils.py) and place them in the same folder. 
 For a video tutorial, follow the link [here](https://youtu.be/iAVOLkmRwe0)
@@ -28,7 +30,7 @@ In [main.py](A3/main.py), you can adjust two things before you start:
 
 Both can also be changed later in the terminal through the menu.
 
-When starting the script, the first thing it asks for is the file path to the IFC model. If the file loads, it prints “IFC model loaded successfully” and shows the menu. If not, it prints an error.
+When running the script, the first thing it asks for is the file path to the IFC model. If the file loads, it prints “IFC model loaded successfully” and shows the menu. If not, it prints an error.
 
 **The menu has the following options:**
 
