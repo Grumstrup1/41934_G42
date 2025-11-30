@@ -2,20 +2,14 @@
 
 ---
 
-## 01 Your tool - A Python script
-
-
----
-
-## 03 A markdown file:
-### State the problem/claim that your tool is solving.
+## State the problem/claim that your tool is solving.
 Cost estimation is a time-consuming task, especially when IFC models have to be loaded into programs like Sigma, where setup, formatting issues, and error diagnosis take up a lot of time. This makes it difficult to get a fast overview of the cost of the project.
 Our Rapid IFC-Based Architectural Cost Estimator removes most of that setup and error handling. It reads the IFC directly and gives a quick overview of the architectural quantities and cost. Also, good data to compare results with the traditional cost estimation.
 
-### **State where you found that problem**
+## **State where you found that problem**
 The problem comes from working as a project manager in earlier projects, where we handled cost estimation. Loading IFC files into Sigma was difficult, and getting the right quantities depended on correct classification and clean data. Because of this, quantities often had to be checked manually, which is a very time-consuming task.
 
-### Description of the tool
+## Description of the tool
 The tool consists of two Python scripts:
 
 - **main.py** - handles the menu, terminal interaction, and the catalog for prices and default areas  
@@ -23,7 +17,7 @@ The tool consists of two Python scripts:
 
 The tool requires access to the IFC file on the computer running it (paste the full file path when the script asks for it).
 
-### Instructions to run the tool
+## Instructions to run the tool
 To run the tool, you need IFCOpenShell and Python installed. Download main.py and utils.py and place them in the same folder.
 
 In main.py, you can adjust two things before you start:
