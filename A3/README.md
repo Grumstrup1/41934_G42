@@ -1,11 +1,5 @@
 # Assignment A3 – Cost Estimation Validation Tool
 
-## Summary
-**Title:** IFC architectural cost estimator tool
-**Category:** Build / Cost / Buildability / Permits  
-**Description (20–40 words):** 
-
-
 ---
 
 ## 01 Your tool - A Python script
