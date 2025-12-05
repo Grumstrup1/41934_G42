@@ -2,9 +2,9 @@
 
 ---
 
-## (As a group) summary of the feedback you received on your tutorial
+## (As a group) Summary of the feedback you received on your tutorial
 
-Feedback
+### Feedback
 
 Group 46:
 -	It can be used as soon as there is an IFC file to estimate the project cost. How does the price database “read” the modeled objects. It generates the general average cost of the project.
@@ -35,81 +35,6 @@ It can also be used later for comparisons, but it’s not intended for detailed 
 </details>
 
 <details>
-  <summary><strong>Marie's reflection</strong></summary>
-
-## Your learning experience for the concept you focused on.
-At the beginning of the course, I had some coding experience, but not in this setup. I was used to working in PyCharm, so switching to Visual Studio Code and working directly with IFC files was new to me. Just getting IFC files to load and understanding how the data was structured was a big learning curve. But over time, things started clicking, and I realised how much potential there actually is in using the IFC data instead of doing everything manually in a 3D model.
-
-By the end of the course, I’m far more confident reading IFCs and understanding how to extract information from them. Scripting is still challenging for me, but I’m getting better and I actually understand what the code is doing now instead of just “hoping it works.” Blender/Bonsai is still not my favourite tool — it feels clunky and not very intuitive — but GitHub, VS Code, and IfcOpenShell feel completely manageable.
-
-### Identify your own level at the beginning of this course and where you ended :
-
-<img width="612" height="434" alt="image" src="https://github.com/user-attachments/assets/b5dc4ded-1d3a-46e5-b881-ddc0333c93a1" />
-I definitely moved up this curve — especially in IFC understanding and recognising what you can automate instead of doing it manually.
-
-### What else do you still need to learn?
-Stronger coding skills — I want to be able to write more of the scripts myself instead of relying on others or AI.
-
-More practice using IfcOpenShell confidently.
-
-Better understanding of model checking workflows.
-
-Still a lot to learn about combining geometry + properties correctly.
-
-### How you might use OpenBIM in the future?
-
-OpenBIM makes workflows more transparent and efficient. Instead of endless meetings and emails just to exchange information, everyone can work from the same model. I see OpenBIM being relevant for:
-
-Early-stage cost estimation
-
-LCA and material calculations
-
-Extracting areas/volumes for installations
-
-Faster decision-making in design
-
-Avoiding misunderstandings between disciplines
-
-It’s something I expect will only grow in importance as the industry moves toward more integrated workflows.
-
-## Your process of developing the tutorial
-### Did the process of the course enable you to answer or define questions that you might need later for thesis?
-
-The Markdown explanation of the code helped a lot — writing things out forced me to understand the structure and what each part of the script actually did. Watching other groups’ tutorials also opened my eyes to other possibilities. I’m not sure it directly defined thesis questions, but it definitely broadened my sense of what you can do with OpenBIM.
-
-### Would you have preferred to have been given less choice in the use cases?
-
-No, the freedom worked fine. The BPMN diagrams helped give structure and an overview, so even someone who isn’t the strongest coder can understand the process and contribute. The openness made it easier to shape the tool in a direction that made sense for us.
-
-### Was the number of tools for the course ok?
-
-Honestly, it is a lot of tools:
-
-Blender/Bonsai — powerful but not user-friendly; easily confusing.
-
-IfcOpenShell — essential, makes sense.
-
-GitHub — relevant and very useful.
-
-IDS — I struggled with understanding why the format needs to be this way; could also be handled in the script.
-
-Python — necessary.
-
-VS Code — great platform, easy to use.
-
-It’s a lot to download and understand when several of the tools are new. But I’m not sure what I would remove either.
-
-## (Individual) Your future for Advanced use of OpenBIM
-are you likely to use OpenBIM tools in your thesis?
-
-are you likely to use OpenBIM tools in your professsional life in the next 10 years?
-
-## (Individual) Wrap up
-conclude the journey through A1-A5
-
-</details>
-
-<details>
   <summary><strong>Magnus's reflection</strong></summary>
 ## Your learning experience for the concept you focused on.
 Identify your own level at the beginning of this course and where you ended :
@@ -135,6 +60,54 @@ are you likely to use OpenBIM tools in your professsional life in the next 10 ye
 
 ## (Individual) Wrap up
 conclude the journey through A1-A5
+
+</details>
+
+
+<details>
+  <summary><strong>Marie's reflection</strong></summary>
+
+## Your learning experience for the concept you focused on.
+At the start of the course, familiarity with scripting and working with IFC data was limited. Working in Visual Studio Code and loading models correctly and understanding how the data was organised was initially challenging, but this improved steadily during the course.
+
+A main learning point was acknowledging how much information can be extracted directly from the model instead of relying on manual calculations or on cheking on 3D models. This made the process more efficient and provided a clearer understanding of how IFC data supports automation.
+
+By the end of the course, I feel much more confident reading IFC models and identifying where relevant data lives. Scripting is still difficult for me, but I’m getting better at understanding what the code is doing and adjusting. Blender/Bonsai still isn’t something I find intuitive, and it slows me down more than it helps, but I can navigate it if needed. GitHub, Visual Studio Code, and IfcOpenShell feel manageable and familiar, and I actually enjoy working in that setup now.
+
+### Identify your own level at the beginning of this course and where you ended :
+
+<img width="612" height="434" alt="image" src="https://github.com/user-attachments/assets/b5dc4ded-1d3a-46e5-b881-ddc0333c93a1" />
+
+
+### What else do you still need to learn?
+The main thing I want to improve is my coding ability. In my group, I was probably the least experienced coder, which meant I focused more on descriptions and checking functionality than writing the script myself. I want to be able to write more of the code independently rather than leaning on others or AI support.
+
+I also want to improve my model-checking skills and get more comfortable combining IFC information with Python tools. There is a lot of potential in this area, to improve a lot of processes.
+
+### How you might use OpenBIM in the future?
+I see OpenBIM playing a bug role in making workflows more transparent and collaborative. Right now, much of the industry still relies on sending files back and forth, meetings, and aligning manually. With OpenBIM, much of that could be streamlined. Having a shared model that everyone can draw information from reduces misunderstandings and helps teams stay aligned.
+
+I think OpenBIM will be particularly useful in early-stage cost estimation, LCA workflows, extracting areas and volumes for installations, and supporting design decisions with data. It feels like something that will become more and more essential as the industry evolves.
+
+## Your process of developing the tutorial
+Writing the tutorial helped clarify the structure of the script and how the data was handled. Documenting the workflow made it easier to understand.
+Reviewing other tutorials provided insight into alternative approaches and how other problems could be solved more efficiently.
+
+I’m not sure the process directly answered thesis questions for me, but it expanded my sense of what’s possible with IFC-based workflows.
+
+I didn’t feel that the freedom in use cases was a problem. The BPMN diagrams and guidance gave enough structure to understand what the tool needed to achieve, and the openness allowed us to shape our solution in a way that matched our skills and interests.
+
+Regarding the number of tools, it is definitely a lot to take in. Blender/Bonsai is complicated and not very user-friendly; it can easily confuse new users. IfcOpenShell is essential and makes sense to include. GitHub is very relevant and useful in a course like this. IDS was conceptually relevant but harder to implement, but it felt like some of the same logic could have been built directly into the script. Python and Visual Studio Code fit naturally into the workflow. Overall, it’s a big toolchain to learn, but not necessarily one I would cut down drastically; it just requires time to get comfortable with.
+
+## Your future for Advanced use of OpenBIM
+I might use OpenBIM in my thesis, depending on the topic I choose. I haven’t decided yet, but if the thesis involves an example with design, calculations, or analysing alternatives, using IFC data would be smart. Being able to extract data and automate parts of the workflow would support the project well.
+
+I might also use OpenBIM in my professional life within the next 10 years — it depends on the job, but I think the industry is moving in that direction, and it should. Not in my current role, but very possible later.
+
+## Wrap up
+Across A1–A5, I learned about the many possibilities in IFC models. If I had taken this course before Advanced Building Design, I would have used the data far more and made decisions more intelligently.
+
+What I take with me is the understanding that data extraction, scripting, and automation can really support design and argumentation. It makes workflows smarter and decisions stronger. This course definitely shifted the way I look at BIM data — from something static to something you can actively use.
 
 </details>
 
