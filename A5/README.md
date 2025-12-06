@@ -130,7 +130,7 @@ To facilitate BIM management and cooperation in future courses or at work.
 ## Your process of developing the tutorial
 -	Did the process of the course enable you to answer or define questions that you might need later for thesis? 
 
-Not for my thesis, but it was nice to get a chance to explore cost estimation and make a tool that I would actually use, say, if I was to go through the Advanced Building Design course again.
+Not for my thesis, but it was nice to get a chance to explore cost estimation and make a tool that I would actually use, say, if I was to go through something like the Advanced Building Design course again.
 
 -	Would you have preferred to have been given less choice in the use cases?
 
