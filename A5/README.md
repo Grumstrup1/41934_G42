@@ -121,6 +121,7 @@ My role was analyst throughout the course, but I took part in some BIM managemen
 
 -	What else do you still need to learn?
 
+I feel I’ve been exposed to plenty of information about OpenBIM and the available tools. At this point, what I need most is practical experience - working in a real project environment to understand the day-to-day strengths, limitations, and challenges of using OpenBIM in practice.
 
 -	How you might use OpenBIM in the future?
 
