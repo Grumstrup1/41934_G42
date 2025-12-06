@@ -116,30 +116,37 @@ What I take with me is the understanding that data extraction, scripting, and au
 
 ## Your learning experience for the concept you focused on.
 -	Identify your own level at the beginning of this course and where you ended
+
 My role was analyst throughout the course, but I took part in some BIM management meetings to bring the focus area together.
 
 -	What else do you still need to learn?
 
 
 -	How you might use OpenBIM in the future?
+
 To facilitate BIM management and cooperation in future courses or at work.
 
 
 ## Your process of developing the tutorial
 -	Did the process of the course enable you to answer or define questions that you might need later for thesis? 
+
 Not for my thesis, but it was nice to get a chance to explore cost estimation and make a tool that I would actually use, say, if I was to go through the Advanced Building Design course again.
 
 -	Would you have preferred to have been given less choice in the use cases?
+
 We didn’t use any provided use case examples, and I enjoyed the freedom to do what we wanted. 
 
 -	Was the number of tools for the course ok - should we have more or less? - if so which ones would you leave out?
+
 As we were able to find all the tools we needed for the project we set out to complete, the overall toolset felt sufficient. There were some tools we didn’t use, but I think having a broad spectrum available is beneficial, as it accommodates different project types and working approaches.
 
 ## Your future for Advanced use of OpenBIM
 -	are you likely to use OpenBIM tools in your thesis?
+
 It’s a possibility. My starting point is that I want to produce something useful or engage in something that refines a useful skill, both criteria of which OpenBIM could work with.
 
 -	are you likely to use OpenBIM tools in your professional life in the next 10 years?
+
 It’s not something I’m actively pursuing, but not something I’d be opposed to.
 
 
