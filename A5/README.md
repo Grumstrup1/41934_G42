@@ -115,25 +115,40 @@ What I take with me is the understanding that data extraction, scripting, and au
   <summary><strong>Thomas's reflection</strong></summary>
 
 ## Your learning experience for the concept you focused on.
-Identify your own level at the beginning of this course and where you ended :
+-	Identify your own level at the beginning of this course and where you ended
+My role was analyst throughout the course, but I took part in some BIM management meetings to bring the focus area together.
 
-<img width="612" height="434" alt="image" src="https://github.com/user-attachments/assets/b5dc4ded-1d3a-46e5-b881-ddc0333c93a1" />
+-	What else do you still need to learn?
 
-What else do you still need to learn?
 
-how you might use OpenBIM in the future?
+-	How you might use OpenBIM in the future?
+To facilitate BIM management and cooperation in future courses or at work.
+
 
 ## Your process of developing the tutorial
-Did the process of the course enable you to answer or define questions that you might need later for thesis?
+-	Did the process of the course enable you to answer or define questions that you might need later for thesis? 
+Not for my thesis, but it was nice to get a chance to explore cost estimation and make a tool that I would actually use, say, if I was to go through the Advanced Building Design course again.
 
-Would you have preferred to have been given less choice in the use cases?
+-	Would you have preferred to have been given less choice in the use cases?
+We didn’t use any provided use case examples, and I enjoyed the freedom to do what we wanted. 
 
-Was the number of tools for the course ok - should we have more or less? - if so which ones would you leave out?
+-	Was the number of tools for the course ok - should we have more or less? - if so which ones would you leave out?
+As we were able to find all the tools we needed for the project we set out to complete, the overall toolset felt sufficient. There were some tools we didn’t use, but I think having a broad spectrum available is beneficial, as it accommodates different project types and working approaches.
 
-## (Individual) Your future for Advanced use of OpenBIM
-are you likely to use OpenBIM tools in your thesis?
+## Your future for Advanced use of OpenBIM
+-	are you likely to use OpenBIM tools in your thesis?
+It’s a possibility. My starting point is that I want to produce something useful or engage in something that refines a useful skill, both criteria of which OpenBIM could work with.
 
-are you likely to use OpenBIM tools in your professsional life in the next 10 years?
+-	are you likely to use OpenBIM tools in your professional life in the next 10 years?
+It’s not something I’m actively pursuing, but not something I’d be opposed to.
+
 
 ## (Individual) Wrap up
-conclude the journey through A1-A5
+-	conclude the journey through A1-A5
+
+We began with the ambition to create something we’d use ourselves. Looking back at the Advanced Building Design course and our experience as project managers, cost estimation immediately came to mind - It was tedious, time-consuming, and often felt unnecessarily inefficient for something that was ultimately meant to produce only a rough cost estimate.
+
+To meet the criteria of this course, we set out to check claims related to quantities and cost estimation of architectural elements. Not deviating from checking claims, we made the tool also serve as a quick and accessible cost-overview tool, with reduced need for error diagnosing, as it works around some of the issues we encountered with traditional cost estimation.
+
+Looking back, I think we achieved our initial goal: we built a tool we would use if we were to retake the Advanced Building Design course. To be clear, it is not a replacement for traditional cost estimation, which remains likely more realistic, but it is very useful during the design phase for assessing economic performance and informing design decisions. In our tests, the time required for error diagnosis was minimal, though more extensive testing would likely introduce additional cases requiring attention.
+
