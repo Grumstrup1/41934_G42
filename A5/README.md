@@ -37,29 +37,49 @@ It can also be used later for comparisons, but it’s not intended for detailed 
 <details>
   <summary><strong>Magnus's reflection</strong></summary>
 ## Your learning experience for the concept you focused on.
-Identify your own level at the beginning of this course and where you ended :
+-	Identify your own level at the beginning of this course and where you ended
 
-<img width="612" height="434" alt="image" src="https://github.com/user-attachments/assets/b5dc4ded-1d3a-46e5-b881-ddc0333c93a1" />
+I was an analyst throughout throughout the couse, mainly working on our tool for quick architectural cost estimation.
 
-What else do you still need to learn?
+-	What else do you still need to learn?
 
-how you might use OpenBIM in the future?
+I think especially my coding skills can use a helping hand. I feel like my understanding of IFCOpenshell and how to use IFC as a sharing format and how much value it holds has greatly improved. However to fully utilize all information you need to be able to code it aswell and in coding there is some basics that i can still work on to optimize, automisation through IFC/OpenBIM.
+
+-	How you might use OpenBIM in the future?
+
+I think OpenBIM and especially software like python can be utilized to automate tasks in the design phase that normally would be very time consuming tasks. Weve only scratched the surface through our tool and i think that optimization like this is very fascinating and is definetly something i can see myself working with.
+
 
 ## Your process of developing the tutorial
-Did the process of the course enable you to answer or define questions that you might need later for thesis?
+-	Did the process of the course enable you to answer or define questions that you might need later for thesis? 
 
-Would you have preferred to have been given less choice in the use cases?
+I think i've been very con coding because i find the bugfixing part very frustrating, but i think this course and this way of using code to extract IFC data is very interesting and could be something i could work on for my thesis.
 
-Was the number of tools for the course ok - should we have more or less? - if so which ones would you leave out?
+-	Would you have preferred to have been given less choice in the use cases?
 
+I think the freedom was nice, but it would be nice with some more structure in the assignments to support your workflow.
 
-## (Individual) Your future for Advanced use of OpenBIM
-are you likely to use OpenBIM tools in your thesis?
+-	Was the number of tools for the course ok - should we have more or less? - if so which ones would you leave out?
 
-are you likely to use OpenBIM tools in your professsional life in the next 10 years?
+I think at the start, the course seemed quite overwhelming as the course website presents alot of different tools and information. However, as we got through the semester it was more and more managable but maybe more structure in the course would help at the beginning, also with understanding what is expected of you.
+
+## Your future for Advanced use of OpenBIM
+-	are you likely to use OpenBIM tools in your thesis?
+
+It is possible, I haven't really narrowed down what I want to do in my thesis yet but this course definetly haven't scared me away from doing someting that involves OpenBIM.
+
+-	are you likely to use OpenBIM tools in your professional life in the next 10 years?
+
+Yes, it is definetly a possibility but it will not be something i will look for in a job advert.
+
 
 ## (Individual) Wrap up
-conclude the journey through A1-A5
+-	conclude the journey through A1-A5
+
+We took our starting point in the Advanced Building Design course as project managers and what we found as the most frustrating that could be automated. Here we all agreed that cost estimation was a very frustrating process using Sigma and that it should be automatable using the tools we learned in this couse. We initially also found a claim in one of the reports about a window cost estimation that, when compared to the IFC model, seemed quite off. Therefore we concluded that our tool probably also could create a better cost estimation than the students in the ABD course could using sigma.
+
+Throughout the course our scope changed to align with our focus group and our managers ambitions. We ended up creating and automated tool to make a cost estimation of architectural elements in an IFC model. However, the process with developing the tool proved this more demanding than we thought and we ended up using estimation of quantities instead of direct geometry in the IFC file because a lot of them lacked data that we could use with IFCOpenshell. The tool did however do what we set to do, create a quick and easy cost estimation based on the IFC file and with great precision. However, creating a 100 % precise cost estimation with our tool in its current state demands a very detailed IFC model and we also saw this in our feedback from the other groups. Reflecting on the course the development phase had a very steep learning curve and resulted in a great understanding of the IFC format and IFCopenshell.
+
 
 </details>
 
